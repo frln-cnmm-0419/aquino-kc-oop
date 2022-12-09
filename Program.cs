@@ -6,6 +6,21 @@ using System.Windows.Forms;
 
 namespace records_database
 {
+    public class Global
+    {
+        private static String valString;
+        public static String stringCon
+        {
+            get
+            {
+                return valString;
+            }
+            set
+            {
+                valString = value;
+            }
+        }
+    }
     static class Program
     {
         /// <summary>
