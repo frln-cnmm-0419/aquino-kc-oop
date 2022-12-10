@@ -42,17 +42,16 @@ namespace records_database
             this.delprod = new System.Windows.Forms.Button();
             this.cancelbtnprod = new System.Windows.Forms.Button();
             this.cancelbtncat = new System.Windows.Forms.Button();
-            this.delcat = new System.Windows.Forms.Button();
             this.addcat = new System.Windows.Forms.Button();
             this.catnametxtbx = new System.Windows.Forms.TextBox();
             this.catidtxtbx = new System.Windows.Forms.TextBox();
             this.catnamelbl = new System.Windows.Forms.Label();
             this.catidlbl = new System.Windows.Forms.Label();
             this.lvcateg = new System.Windows.Forms.ListView();
-            this.prodmaintenancelbl = new System.Windows.Forms.Label();
-            this.catmaintenancelbl = new System.Windows.Forms.Label();
             this.fcatcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scatcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prodmaintenancelbl = new System.Windows.Forms.Label();
+            this.catmaintenancelbl = new System.Windows.Forms.Label();
             this.lvprod = new System.Windows.Forms.ListView();
             this.fprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -158,6 +157,7 @@ namespace records_database
             this.editprod.TabIndex = 9;
             this.editprod.Text = "EDIT";
             this.editprod.UseVisualStyleBackColor = true;
+            this.editprod.Click += new System.EventHandler(this.editprod_Click);
             // 
             // delprod
             // 
@@ -169,6 +169,7 @@ namespace records_database
             this.delprod.TabIndex = 10;
             this.delprod.Text = "DELETE";
             this.delprod.UseVisualStyleBackColor = true;
+            this.delprod.Click += new System.EventHandler(this.delprod_Click);
             // 
             // cancelbtnprod
             // 
@@ -186,24 +187,13 @@ namespace records_database
             // 
             this.cancelbtncat.Font = new System.Drawing.Font("JetBrains Mono Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cancelbtncat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cancelbtncat.Location = new System.Drawing.Point(986, 186);
+            this.cancelbtncat.Location = new System.Drawing.Point(929, 186);
             this.cancelbtncat.Name = "cancelbtncat";
-            this.cancelbtncat.Size = new System.Drawing.Size(123, 39);
+            this.cancelbtncat.Size = new System.Drawing.Size(180, 39);
             this.cancelbtncat.TabIndex = 16;
             this.cancelbtncat.Text = "CANCEL";
             this.cancelbtncat.UseVisualStyleBackColor = true;
             this.cancelbtncat.Click += new System.EventHandler(this.cancelbtncat_Click);
-            // 
-            // delcat
-            // 
-            this.delcat.Font = new System.Drawing.Font("JetBrains Mono Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.delcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.delcat.Location = new System.Drawing.Point(847, 186);
-            this.delcat.Name = "delcat";
-            this.delcat.Size = new System.Drawing.Size(123, 39);
-            this.delcat.TabIndex = 15;
-            this.delcat.Text = "DELETE";
-            this.delcat.UseVisualStyleBackColor = true;
             // 
             // addcat
             // 
@@ -211,7 +201,7 @@ namespace records_database
             this.addcat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addcat.Location = new System.Drawing.Point(713, 186);
             this.addcat.Name = "addcat";
-            this.addcat.Size = new System.Drawing.Size(123, 39);
+            this.addcat.Size = new System.Drawing.Size(195, 39);
             this.addcat.TabIndex = 13;
             this.addcat.Text = "ADD";
             this.addcat.UseVisualStyleBackColor = true;
@@ -271,7 +261,16 @@ namespace records_database
             this.lvcateg.TabIndex = 21;
             this.lvcateg.UseCompatibleStateImageBehavior = false;
             this.lvcateg.View = System.Windows.Forms.View.Details;
-            this.lvcateg.SelectedIndexChanged += new System.EventHandler(this.lvcateg_SelectedIndexChanged);
+            // 
+            // fcatcol
+            // 
+            this.fcatcol.Text = "Category ID";
+            this.fcatcol.Width = 183;
+            // 
+            // scatcol
+            // 
+            this.scatcol.Text = "Category Name";
+            this.scatcol.Width = 208;
             // 
             // prodmaintenancelbl
             // 
@@ -297,16 +296,6 @@ namespace records_database
             this.catmaintenancelbl.TabIndex = 23;
             this.catmaintenancelbl.Text = "Category Maintenance";
             // 
-            // fcatcol
-            // 
-            this.fcatcol.Text = "Category ID";
-            this.fcatcol.Width = 183;
-            // 
-            // scatcol
-            // 
-            this.scatcol.Text = "Category Name";
-            this.scatcol.Width = 208;
-            // 
             // lvprod
             // 
             this.lvprod.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -326,6 +315,7 @@ namespace records_database
             this.lvprod.UseCompatibleStateImageBehavior = false;
             this.lvprod.View = System.Windows.Forms.View.Details;
             this.lvprod.SelectedIndexChanged += new System.EventHandler(this.lvprod_SelectedIndexChanged);
+            this.lvprod.Click += new System.EventHandler(this.lvprod_Click);
             // 
             // fprodcol
             // 
@@ -362,7 +352,6 @@ namespace records_database
             this.Controls.Add(this.catidtxtbx);
             this.Controls.Add(this.catnametxtbx);
             this.Controls.Add(this.cancelbtncat);
-            this.Controls.Add(this.delcat);
             this.Controls.Add(this.addcat);
             this.Controls.Add(this.cancelbtnprod);
             this.Controls.Add(this.delprod);
@@ -400,7 +389,6 @@ namespace records_database
         private System.Windows.Forms.Button delprod;
         private System.Windows.Forms.Button cancelbtnprod;
         private System.Windows.Forms.Button cancelbtncat;
-        private System.Windows.Forms.Button delcat;
         private System.Windows.Forms.Button addcat;
         private System.Windows.Forms.TextBox catnametxtbx;
         private System.Windows.Forms.TextBox catidtxtbx;

@@ -14,11 +14,11 @@ namespace records_database
         public DataSet dtst = new DataSet();
         public void dispRec(String strings)
         {
-            MySqlConnection myconnection = new MySqlConnection(Global.stringCon);
-            MySqlCommand mycommand = myconnection.CreateCommand();
-            MySqlDataAdapter myadapter = new MySqlDataAdapter(mycommand);
-            mycommand.CommandText = strings;
-            MySqlCommandBuilder mybuilder = new MySqlCommandBuilder(myadapter);
+            MySqlConnection myconnection = new MySqlConnection(Global.stringCon); // creatin an instance of connection
+            MySqlCommand mycommand = myconnection.CreateCommand(); //creating my command variable
+            MySqlDataAdapter myadapter = new MySqlDataAdapter(mycommand); //passing the mycomman to my adapter instance
+            mycommand.CommandText = strings; // passing the strings as command
+            MySqlCommandBuilder mybuilder = new MySqlCommandBuilder(myadapter); //passing the adapter to the command builder instance
 
             myconnection.Open();
             myadapter.Fill(dtst);
