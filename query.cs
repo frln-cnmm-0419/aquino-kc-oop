@@ -11,7 +11,7 @@ namespace records_database
 {
     class query
     {
-        public DataSet dtst = new DataSet();
+        public DataSet dtst = new DataSet(); // creating the dataset instance
         public void dispRec(String strings)
         {
             MySqlConnection myconnection = new MySqlConnection(Global.stringCon); // creatin an instance of connection
@@ -20,21 +20,21 @@ namespace records_database
             mycommand.CommandText = strings; // passing the strings as command
             MySqlCommandBuilder mybuilder = new MySqlCommandBuilder(myadapter); //passing the adapter to the command builder instance
 
-            myconnection.Open();
-            myadapter.Fill(dtst);
-            myconnection.Close();
+            myconnection.Open(); // opening the connection
+            myadapter.Fill(dtst); // filling the dataset
+            myconnection.Close(); // closing the connection
         }
 
 
-        public void maintRec(String str)
+        public void maintRec(String str) //maintain record function
         {
-            MySqlConnection myconnection = new MySqlConnection(Global.stringCon);
-            MySqlCommand mycomm = myconnection.CreateCommand();
-            mycomm.CommandText = str;
+            MySqlConnection myconnection = new MySqlConnection(Global.stringCon); // creating the connection instance
+            MySqlCommand mycomm = myconnection.CreateCommand(); // creating the command
+            mycomm.CommandText = str; // creating the commannd string
 
-            myconnection.Open();
+            myconnection.Open(); // opening the connection
             mycomm.ExecuteNonQuery();
-            myconnection.Close();
+            myconnection.Close(); // closing the connection
 
         }
     }

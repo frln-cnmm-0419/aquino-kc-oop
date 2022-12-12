@@ -8,7 +8,7 @@ namespace records_database
 {
     public class Global
     {
-        private static String valString;
+        private static String valString; // creating the valstring string
         public static String stringCon
         {
             get
