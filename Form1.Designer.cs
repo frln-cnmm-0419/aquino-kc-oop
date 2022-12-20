@@ -57,6 +57,7 @@ namespace records_database
             this.sprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frtprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.goToPurProdBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prodidlbl
@@ -257,7 +258,7 @@ namespace records_database
             this.lvcateg.HideSelection = false;
             this.lvcateg.Location = new System.Drawing.Point(713, 248);
             this.lvcateg.Name = "lvcateg";
-            this.lvcateg.Size = new System.Drawing.Size(396, 289);
+            this.lvcateg.Size = new System.Drawing.Size(396, 233);
             this.lvcateg.TabIndex = 21;
             this.lvcateg.UseCompatibleStateImageBehavior = false;
             this.lvcateg.View = System.Windows.Forms.View.Details;
@@ -310,7 +311,7 @@ namespace records_database
             this.lvprod.HideSelection = false;
             this.lvprod.Location = new System.Drawing.Point(15, 248);
             this.lvprod.Name = "lvprod";
-            this.lvprod.Size = new System.Drawing.Size(601, 289);
+            this.lvprod.Size = new System.Drawing.Size(477, 233);
             this.lvprod.TabIndex = 24;
             this.lvprod.UseCompatibleStateImageBehavior = false;
             this.lvprod.View = System.Windows.Forms.View.Details;
@@ -330,12 +331,24 @@ namespace records_database
             // tprodcol
             // 
             this.tprodcol.Text = "Quantity";
-            this.tprodcol.Width = 85;
+            this.tprodcol.Width = 52;
             // 
             // frtprodcol
             // 
             this.frtprodcol.Text = "Category ID";
             this.frtprodcol.Width = 151;
+            // 
+            // goToPurProdBtn
+            // 
+            this.goToPurProdBtn.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.goToPurProdBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.goToPurProdBtn.Location = new System.Drawing.Point(521, 498);
+            this.goToPurProdBtn.Name = "goToPurProdBtn";
+            this.goToPurProdBtn.Size = new System.Drawing.Size(173, 26);
+            this.goToPurProdBtn.TabIndex = 25;
+            this.goToPurProdBtn.Text = "Go To Product Purchase";
+            this.goToPurProdBtn.UseVisualStyleBackColor = true;
+            this.goToPurProdBtn.Click += new System.EventHandler(this.goToPurProdBtn_Click);
             // 
             // mainform
             // 
@@ -343,6 +356,7 @@ namespace records_database
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::records_database.Properties.Resources._318304089_551224579767443_5089812890261992367_n;
             this.ClientSize = new System.Drawing.Size(1121, 549);
+            this.Controls.Add(this.goToPurProdBtn);
             this.Controls.Add(this.lvprod);
             this.Controls.Add(this.catmaintenancelbl);
             this.Controls.Add(this.prodmaintenancelbl);
@@ -404,6 +418,7 @@ namespace records_database
         private System.Windows.Forms.ColumnHeader sprodcol;
         private System.Windows.Forms.ColumnHeader tprodcol;
         private System.Windows.Forms.ColumnHeader frtprodcol;
+        private System.Windows.Forms.Button goToPurProdBtn;
     }
 }
 

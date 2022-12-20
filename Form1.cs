@@ -348,6 +348,14 @@ namespace records_database
             }
         }
 
+        private void goToPurProdBtn_Click(object sender, EventArgs e)
+        {
+            purchaseOrder purOrd = new purchaseOrder();
+            purOrd.Show();
+            this.Hide();
+
+        }
+
         // delete product button event
         private void delprod_Click(object sender, EventArgs e)
         {
