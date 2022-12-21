@@ -49,6 +49,8 @@ namespace records_database
             this.qttyStocks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addToPurchbtn = new System.Windows.Forms.Button();
             this.cancelSelectionbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.categname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // suppNameTxtBx
@@ -154,7 +156,8 @@ namespace records_database
             this.productID,
             this.productName,
             this.supplierPrice,
-            this.qttyStocks});
+            this.qttyStocks,
+            this.categname});
             this.lvPurchOrd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lvPurchOrd.FullRowSelect = true;
             this.lvPurchOrd.GridLines = true;
@@ -171,6 +174,7 @@ namespace records_database
             // suppliernameHidden
             // 
             this.suppliernameHidden.Text = "Supplier Name Hidden";
+            this.suppliernameHidden.Width = 0;
             // 
             // supplieraddHidden
             // 
@@ -180,12 +184,12 @@ namespace records_database
             // productID
             // 
             this.productID.Text = "Product ID:";
-            this.productID.Width = 226;
+            this.productID.Width = 98;
             // 
             // productName
             // 
             this.productName.Text = "Product Name:";
-            this.productName.Width = 312;
+            this.productName.Width = 180;
             // 
             // supplierPrice
             // 
@@ -199,7 +203,7 @@ namespace records_database
             // 
             // addToPurchbtn
             // 
-            this.addToPurchbtn.Location = new System.Drawing.Point(630, 45);
+            this.addToPurchbtn.Location = new System.Drawing.Point(619, 12);
             this.addToPurchbtn.Name = "addToPurchbtn";
             this.addToPurchbtn.Size = new System.Drawing.Size(101, 47);
             this.addToPurchbtn.TabIndex = 13;
@@ -217,11 +221,27 @@ namespace records_database
             this.cancelSelectionbtn.UseVisualStyleBackColor = true;
             this.cancelSelectionbtn.Click += new System.EventHandler(this.cancelSelectionbtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(619, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 47);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Go To Purchase";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // categname
+            // 
+            this.categname.Text = "CategNameHidden";
+            this.categname.Width = 82;
+            // 
             // purchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 601);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelSelectionbtn);
             this.Controls.Add(this.addToPurchbtn);
             this.Controls.Add(this.lvPurchOrd);
@@ -265,5 +285,7 @@ namespace records_database
         private System.Windows.Forms.ColumnHeader qttyStocks;
         private System.Windows.Forms.Button addToPurchbtn;
         private System.Windows.Forms.Button cancelSelectionbtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader categname;
     }
 }

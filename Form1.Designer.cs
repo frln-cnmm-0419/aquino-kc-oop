@@ -58,6 +58,8 @@ namespace records_database
             this.tprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frtprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.goToPurProdBtn = new System.Windows.Forms.Button();
+            this.fifthprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.extForPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // prodidlbl
@@ -304,14 +306,16 @@ namespace records_database
             this.fprodcol,
             this.sprodcol,
             this.tprodcol,
-            this.frtprodcol});
+            this.frtprodcol,
+            this.extForPrice,
+            this.fifthprodcol});
             this.lvprod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lvprod.FullRowSelect = true;
             this.lvprod.GridLines = true;
             this.lvprod.HideSelection = false;
             this.lvprod.Location = new System.Drawing.Point(15, 248);
             this.lvprod.Name = "lvprod";
-            this.lvprod.Size = new System.Drawing.Size(477, 233);
+            this.lvprod.Size = new System.Drawing.Size(554, 233);
             this.lvprod.TabIndex = 24;
             this.lvprod.UseCompatibleStateImageBehavior = false;
             this.lvprod.View = System.Windows.Forms.View.Details;
@@ -321,12 +325,12 @@ namespace records_database
             // fprodcol
             // 
             this.fprodcol.Text = "Product ID";
-            this.fprodcol.Width = 106;
+            this.fprodcol.Width = 81;
             // 
             // sprodcol
             // 
             this.sprodcol.Text = "Product Name";
-            this.sprodcol.Width = 254;
+            this.sprodcol.Width = 162;
             // 
             // tprodcol
             // 
@@ -336,7 +340,7 @@ namespace records_database
             // frtprodcol
             // 
             this.frtprodcol.Text = "Category ID";
-            this.frtprodcol.Width = 151;
+            this.frtprodcol.Width = 80;
             // 
             // goToPurProdBtn
             // 
@@ -349,6 +353,15 @@ namespace records_database
             this.goToPurProdBtn.Text = "Go To Product Purchase";
             this.goToPurProdBtn.UseVisualStyleBackColor = true;
             this.goToPurProdBtn.Click += new System.EventHandler(this.goToPurProdBtn_Click);
+            // 
+            // fifthprodcol
+            // 
+            this.fifthprodcol.Text = "Total Price:";
+            this.fifthprodcol.Width = 77;
+            // 
+            // extForPrice
+            // 
+            this.extForPrice.Text = "Price";
             // 
             // mainform
             // 
@@ -419,6 +432,8 @@ namespace records_database
         private System.Windows.Forms.ColumnHeader tprodcol;
         private System.Windows.Forms.ColumnHeader frtprodcol;
         private System.Windows.Forms.Button goToPurProdBtn;
+        private System.Windows.Forms.ColumnHeader fifthprodcol;
+        private System.Windows.Forms.ColumnHeader extForPrice;
     }
 }
 

@@ -14,11 +14,10 @@ namespace records_database
     {
         int base_price, quantityCount, availQtty;
         double totalPrice, grandTotalPrice;
-        String textForProductName, textForProductID;
+        String textForProductName, textForProductID, updatedQuantity;
         public purchaseOrder()
         {
             InitializeComponent();
-            loadInventory();
             Global.stringCon = "SERVER=localhost;" + "DATABASE=proddb;" + "UID=root;" + "PASSWORD=2003;"; // setting the attribute foor connection details
         }
 
@@ -32,8 +31,7 @@ namespace records_database
             String requestData = "Select * from purchaseorder"; // for requesting the data from the producttbl
             query query = new query(); // creating the query cs instance
             query.dispRec(requestData); // using the query instance to access the function display record and passing the request string
-
-            // lvPurchOrd.Items.Clear(); // clearing the listview for products
+            lvPurchOrd.Items.Clear(); // clearing the listview for products
             for (int ctrs = 0; ctrs < query.dtst.Tables[0].Rows.Count; ctrs++) // iterate over the row of the product table
             {
                 lvPurchOrd.Items.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(0).ToString()); // accessing the first column
@@ -42,7 +40,12 @@ namespace records_database
                 lvPurchOrd.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString()); //  accessing the fourth column
                 lvPurchOrd.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(4).ToString()); //  accessing the fourth column
                 lvPurchOrd.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(5).ToString()); //  accessing the fourth column
+                lvPurchOrd.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(6).ToString()); //  accessing the fourth column
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void clearFieldsForPurchaseOrder()
@@ -63,7 +66,6 @@ namespace records_database
                 suppNameTxtBx.Text = item.SubItems[0].Text;
                 suppAddTxtBx.Text = item.SubItems[1].Text;
                 base_price = Convert.ToInt32(item.SubItems[4].Text);
-                Console.WriteLine(base_price);
             }
             else
             {
@@ -82,24 +84,29 @@ namespace records_database
             try
             {
                 quantityCount = Convert.ToInt32(qttyPurchOrd.Text);
-                if (quantityCount >= availQtty)
+                if (quantityCount < availQtty)
                 {
                     textForProductID = item.SubItems[2].Text;
                     textForProductName = item.SubItems[3].Text;
                     base_price = Convert.ToInt32(item.SubItems[4].Text);
-                    totalPrice = base_price * quantityCount;
+                    totalPrice = ((base_price * 0.20) + base_price) * quantityCount;
                     totalPriceTxtBox.Text = Convert.ToString(totalPrice);
                     grandTotalPrice += totalPrice;
                     grndTotalPriceTxtbx.Text = Convert.ToString(grandTotalPrice);
-
-                    String queryToProductTable = "INSERT INTO producttbl(ProductID, ProductName, Quantity, CategoryID) values('" + textForProductID + "', '" + textForProductName + "', '" + qttyPurchOrd.Text + "', '" + "DUMMY" + "')";
+                    String queryToProductTable = "INSERT INTO producttbl(ProductID, ProductName, Quantity, CategoryID, Price, TotalPrice) values('" + textForProductID + "', '" + textForProductName + "', '" + qttyPurchOrd.Text + "', '" + item.SubItems[6].Text + "', '" + Convert.ToString((base_price * 0.20) + base_price) + "', '" + Convert.ToString(totalPrice) + "')";
                     query qry = new query();
                     qry.maintRec(queryToProductTable);
-
+                    updatedQuantity = Convert.ToString(availQtty - quantityCount);
+                    String queryToUpdatedAvailQtty = "UPDATE purchaseorder SET quantityStock='" + updatedQuantity + "' where supplierName='" + suppNameTxtBx.Text + "'";
+                    qry.maintRec(queryToUpdatedAvailQtty);
+                    MessageBox.Show("The Selected Item is being added to your purchase and the available stocks will be updated.", "SUCCESS");
+                    loadInventory();
+                    totalPriceTxtBox.Text = "";
+                    qttyPurchOrd.Text = "";
                     base_price = 0;
                     quantityCount = 0;
                 }
-                else if (quantityCount <= availQtty)
+                else if (quantityCount > availQtty)
                 {
                     MessageBox.Show("Please Reduce Your Quantity.", "WARNING");
                 }

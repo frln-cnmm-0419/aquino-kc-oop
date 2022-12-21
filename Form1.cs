@@ -46,7 +46,41 @@ namespace records_database
                 lvprod.Items.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(0).ToString()); // accessing the first column
                 lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(1).ToString()); //  accessing the second column
                 lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(2).ToString()); //  accessing the third column
-                lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString()); //  accessing the fourth column
+
+                if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Processor")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("C37105");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Graphics Card")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("GC7556");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Monitor")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("M77922");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Motherboard")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("MB6538");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "HDD")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("H37101");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Keyboard")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("MB3594");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "Mice")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("M57810");
+                }
+                else if (query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(3).ToString() == "")
+                {
+                    lvprod.Items[ctrs].SubItems.Add("OTHER");
+                }
+                lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(4).ToString()); //  accessing the fourth column
+                lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(5).ToString()); //  accessing the fourth column
             }
         }
 
@@ -352,8 +386,6 @@ namespace records_database
         {
             purchaseOrder purOrd = new purchaseOrder();
             purOrd.Show();
-            this.Hide();
-
         }
 
         // delete product button event
