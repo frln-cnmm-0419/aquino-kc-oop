@@ -29,152 +29,191 @@ namespace records_database
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.posLv = new System.Windows.Forms.ListView();
+            this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.qtty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.grndtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ornum = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ornumtxtbx = new System.Windows.Forms.TextBox();
+            this.custName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.grndTotalTxtBox = new System.Windows.Forms.TextBox();
+            this.cashTxtBox = new System.Windows.Forms.TextBox();
+            this.changetxtbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.confbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // posLv
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(24, 143);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(592, 292);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.posLv.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.posLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.productName,
+            this.qtty,
+            this.price,
+            this.grndtotal});
+            this.posLv.GridLines = true;
+            this.posLv.HideSelection = false;
+            this.posLv.Location = new System.Drawing.Point(24, 143);
+            this.posLv.Name = "posLv";
+            this.posLv.Size = new System.Drawing.Size(592, 292);
+            this.posLv.TabIndex = 0;
+            this.posLv.UseCompatibleStateImageBehavior = false;
+            this.posLv.View = System.Windows.Forms.View.Details;
+            // 
+            // productName
+            // 
+            this.productName.Text = "Product Name:";
+            this.productName.Width = 303;
+            // 
+            // qtty
+            // 
+            this.qtty.Text = "Quantity";
+            // 
+            // price
+            // 
+            this.price.Text = "Price:";
+            this.price.Width = 140;
+            // 
+            // grndtotal
+            // 
+            this.grndtotal.Text = "Grand Total:";
+            this.grndtotal.Width = 83;
             // 
             // ornum
             // 
             this.ornum.AutoSize = true;
+            this.ornum.BackColor = System.Drawing.Color.Transparent;
+            this.ornum.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ornum.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ornum.Location = new System.Drawing.Point(21, 19);
             this.ornum.Name = "ornum";
-            this.ornum.Size = new System.Drawing.Size(66, 13);
+            this.ornum.Size = new System.Drawing.Size(87, 14);
             this.ornum.TabIndex = 1;
             this.ornum.Text = "OR Number:";
             // 
-            // textBox1
+            // ornumtxtbx
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(24, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 2;
+            this.ornumtxtbx.Enabled = false;
+            this.ornumtxtbx.Location = new System.Drawing.Point(24, 35);
+            this.ornumtxtbx.Name = "ornumtxtbx";
+            this.ornumtxtbx.Size = new System.Drawing.Size(195, 20);
+            this.ornumtxtbx.TabIndex = 2;
             // 
-            // textBox2
+            // custName
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(24, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 20);
-            this.textBox2.TabIndex = 3;
+            this.custName.Location = new System.Drawing.Point(24, 87);
+            this.custName.Name = "custName";
+            this.custName.Size = new System.Drawing.Size(195, 20);
+            this.custName.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(21, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(119, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "Customer Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(240, 71);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(235, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(143, 14);
             this.label2.TabIndex = 5;
             this.label2.Text = "GrandTotal Price:";
             // 
-            // label3
+            // grndTotalTxtBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(240, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Total Price:";
+            this.grndTotalTxtBox.Enabled = false;
+            this.grndTotalTxtBox.Location = new System.Drawing.Point(238, 35);
+            this.grndTotalTxtBox.Name = "grndTotalTxtBox";
+            this.grndTotalTxtBox.Size = new System.Drawing.Size(195, 20);
+            this.grndTotalTxtBox.TabIndex = 7;
             // 
-            // textBox3
+            // cashTxtBox
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(243, 87);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 20);
-            this.textBox3.TabIndex = 7;
+            this.cashTxtBox.Location = new System.Drawing.Point(238, 87);
+            this.cashTxtBox.Name = "cashTxtBox";
+            this.cashTxtBox.Size = new System.Drawing.Size(195, 20);
+            this.cashTxtBox.TabIndex = 12;
+            this.cashTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cashTxtBox_KeyPress);
             // 
-            // textBox4
+            // changetxtbox
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(243, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(195, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(461, 35);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(155, 20);
-            this.textBox5.TabIndex = 12;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(461, 87);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(155, 20);
-            this.textBox6.TabIndex = 11;
+            this.changetxtbox.Enabled = false;
+            this.changetxtbox.Location = new System.Drawing.Point(461, 35);
+            this.changetxtbox.Name = "changetxtbox";
+            this.changetxtbox.Size = new System.Drawing.Size(155, 20);
+            this.changetxtbox.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(458, 19);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(235, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(47, 14);
             this.label4.TabIndex = 10;
             this.label4.Text = "Cash:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(458, 71);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(458, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(63, 14);
             this.label5.TabIndex = 9;
             this.label5.Text = "Change:";
+            // 
+            // confbtn
+            // 
+            this.confbtn.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.confbtn.Location = new System.Drawing.Point(461, 77);
+            this.confbtn.Name = "confbtn";
+            this.confbtn.Size = new System.Drawing.Size(155, 38);
+            this.confbtn.TabIndex = 13;
+            this.confbtn.Text = "CONFIRM";
+            this.confbtn.UseVisualStyleBackColor = true;
+            this.confbtn.Click += new System.EventHandler(this.confbtn_Click);
             // 
             // pointOfSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::records_database.Properties.Resources.Green;
             this.ClientSize = new System.Drawing.Size(648, 473);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.confbtn);
+            this.Controls.Add(this.cashTxtBox);
+            this.Controls.Add(this.changetxtbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.grndTotalTxtBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.custName);
+            this.Controls.Add(this.ornumtxtbx);
             this.Controls.Add(this.ornum);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.posLv);
             this.Name = "pointOfSale";
             this.Text = "Point Of Sales";
+            this.Load += new System.EventHandler(this.pointOfSale_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,18 +221,21 @@ namespace records_database
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView posLv;
         private System.Windows.Forms.Label ornum;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ornumtxtbx;
+        private System.Windows.Forms.TextBox custName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox grndTotalTxtBox;
+        private System.Windows.Forms.TextBox cashTxtBox;
+        private System.Windows.Forms.TextBox changetxtbox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ColumnHeader productName;
+        private System.Windows.Forms.ColumnHeader qtty;
+        private System.Windows.Forms.ColumnHeader price;
+        private System.Windows.Forms.ColumnHeader grndtotal;
+        private System.Windows.Forms.Button confbtn;
     }
 }

@@ -47,10 +47,9 @@ namespace records_database
             this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.supplierPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qttyStocks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.categname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.addToPurchbtn = new System.Windows.Forms.Button();
             this.cancelSelectionbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.categname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // suppNameTxtBx
@@ -72,29 +71,41 @@ namespace records_database
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(35, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(119, 14);
             this.label1.TabIndex = 3;
             this.label1.Text = "Supplier Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Location = new System.Drawing.Point(35, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(143, 14);
             this.label2.TabIndex = 4;
             this.label2.Text = "Supplier Address:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(292, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(79, 14);
             this.label3.TabIndex = 6;
             this.label3.Text = "Quantity:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // qttyPurchOrd
             // 
@@ -106,11 +117,15 @@ namespace records_database
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Location = new System.Drawing.Point(292, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.Size = new System.Drawing.Size(103, 14);
             this.label4.TabIndex = 8;
             this.label4.Text = "Total Price:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // totalPriceTxtBox
             // 
@@ -123,11 +138,15 @@ namespace records_database
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Location = new System.Drawing.Point(394, 45);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(151, 14);
             this.label5.TabIndex = 10;
             this.label5.Text = "Grand Total Price:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // grndTotalPriceTxtbx
             // 
@@ -139,7 +158,8 @@ namespace records_database
             // 
             // enter
             // 
-            this.enter.Location = new System.Drawing.Point(512, 12);
+            this.enter.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.enter.Location = new System.Drawing.Point(551, 12);
             this.enter.Name = "enter";
             this.enter.Size = new System.Drawing.Size(101, 47);
             this.enter.TabIndex = 11;
@@ -165,7 +185,7 @@ namespace records_database
             this.lvPurchOrd.HideSelection = false;
             this.lvPurchOrd.Location = new System.Drawing.Point(38, 122);
             this.lvPurchOrd.Name = "lvPurchOrd";
-            this.lvPurchOrd.Size = new System.Drawing.Size(674, 446);
+            this.lvPurchOrd.Size = new System.Drawing.Size(674, 435);
             this.lvPurchOrd.TabIndex = 12;
             this.lvPurchOrd.UseCompatibleStateImageBehavior = false;
             this.lvPurchOrd.View = System.Windows.Forms.View.Details;
@@ -201,9 +221,15 @@ namespace records_database
             this.qttyStocks.Text = "Quantity (Stocks):";
             this.qttyStocks.Width = 141;
             // 
+            // categname
+            // 
+            this.categname.Text = "CategNameHidden";
+            this.categname.Width = 0;
+            // 
             // addToPurchbtn
             // 
-            this.addToPurchbtn.Location = new System.Drawing.Point(619, 12);
+            this.addToPurchbtn.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addToPurchbtn.Location = new System.Drawing.Point(658, 45);
             this.addToPurchbtn.Name = "addToPurchbtn";
             this.addToPurchbtn.Size = new System.Drawing.Size(101, 47);
             this.addToPurchbtn.TabIndex = 13;
@@ -213,7 +239,8 @@ namespace records_database
             // 
             // cancelSelectionbtn
             // 
-            this.cancelSelectionbtn.Location = new System.Drawing.Point(512, 70);
+            this.cancelSelectionbtn.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cancelSelectionbtn.Location = new System.Drawing.Point(551, 68);
             this.cancelSelectionbtn.Name = "cancelSelectionbtn";
             this.cancelSelectionbtn.Size = new System.Drawing.Size(101, 47);
             this.cancelSelectionbtn.TabIndex = 14;
@@ -221,27 +248,12 @@ namespace records_database
             this.cancelSelectionbtn.UseVisualStyleBackColor = true;
             this.cancelSelectionbtn.Click += new System.EventHandler(this.cancelSelectionbtn_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(619, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 47);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Go To Purchase";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // categname
-            // 
-            this.categname.Text = "CategNameHidden";
-            this.categname.Width = 82;
-            // 
             // purchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 601);
-            this.Controls.Add(this.button1);
+            this.BackgroundImage = global::records_database.Properties.Resources.Green;
+            this.ClientSize = new System.Drawing.Size(768, 601);
             this.Controls.Add(this.cancelSelectionbtn);
             this.Controls.Add(this.addToPurchbtn);
             this.Controls.Add(this.lvPurchOrd);
@@ -285,7 +297,6 @@ namespace records_database
         private System.Windows.Forms.ColumnHeader qttyStocks;
         private System.Windows.Forms.Button addToPurchbtn;
         private System.Windows.Forms.Button cancelSelectionbtn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColumnHeader categname;
     }
 }

@@ -12,6 +12,7 @@ namespace records_database
 {
     public partial class mainform : Form
     {
+        double grandTotal;
         string match, matchedEdit; // global variable for matching the category id and name
 
         public mainform()
@@ -39,7 +40,7 @@ namespace records_database
             String data = "Select * from producttbl"; // for requesting the data from the producttbl
             query query = new query(); // creating the query cs instance
             query.dispRec(data); // using the query instance to access the function display record and passing the request string
-
+            grandTotal = 0;
             lvprod.Items.Clear(); // clearing the listview for products
             for(int ctrs = 0; ctrs < query.dtst.Tables[0].Rows.Count; ctrs++) // iterate over the row of the product table
             {
@@ -81,7 +82,11 @@ namespace records_database
                 }
                 lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(4).ToString()); //  accessing the fourth column
                 lvprod.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(5).ToString()); //  accessing the fourth column
+                grandTotal += Convert.ToDouble(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(5).ToString());
+                Console.WriteLine(grandTotal);
+                grndTotal.Text = Convert.ToString(grandTotal);
             }
+
         }
 
         // function for loading the category table records
@@ -97,6 +102,8 @@ namespace records_database
                 lvcateg.Items.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(0).ToString()); // accessing the first
                 lvcateg.Items[ctrs].SubItems.Add(query.dtst.Tables[0].Rows[ctrs].ItemArray.GetValue(1).ToString()); // accessig the subitems
             }
+
+
         }
 
         // disable function for products field
@@ -346,7 +353,6 @@ namespace records_database
                 querytotble.dispRec(datafrmtbl); // executing the command to the maintain record
                 for (int i = 0; i < querytotble.dtst.Tables[0].Rows.Count; i++) // loop to iterate over the category table
                 {
-                    matchedEdit = querytotble.dtst.Tables[0].Rows[i].ItemArray.GetValue(1).ToString(); // keeping the track of the iteration
 
                     if (categidtxtbx.Text == querytotble.dtst.Tables[0].Rows[i].ItemArray.GetValue(0).ToString()) // if the current text of te catgory id text box is match with any of the column of catgory id in the other table
                     {
@@ -388,10 +394,30 @@ namespace records_database
             purOrd.Show();
         }
 
+        
+
+        private void reloadlist_Click(object sender, EventArgs e)
+        {
+            ldrec();
+        }
+
+        private void posbtn_Click(object sender, EventArgs e)
+        {
+            if (grndTotal.Text == "0")
+            {
+                MessageBox.Show("Product List is Empty.", "WARNING");
+            }
+            else
+            {
+                pointOfSale pos = new pointOfSale();
+                pos.Show();
+            }
+        }
+
         // delete product button event
         private void delprod_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Do you want to continue this operation?", "WARNING", MessageBoxButtons.YesNo) == DialogResult.Yes) // confirmation
+            if(MessageBox.Show("WARNING", "Do you want to continue this operation?", MessageBoxButtons.YesNo) == DialogResult.Yes) // confirmation
             {
                 String del = "DELETE FROM producttbl where ProductID='"+ prodidtxtbx.Text +"'"; // query to delete the target row
                 query qrdel = new query(); // creating an instance of query cs

@@ -57,9 +57,14 @@ namespace records_database
             this.sprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.frtprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.goToPurProdBtn = new System.Windows.Forms.Button();
-            this.fifthprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.extForPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fifthprodcol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.goToPurProdBtn = new System.Windows.Forms.Button();
+            this.grndTotal = new System.Windows.Forms.Label();
+            this.reloadlist = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.posbtn = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
             // prodidlbl
@@ -342,6 +347,15 @@ namespace records_database
             this.frtprodcol.Text = "Category ID";
             this.frtprodcol.Width = 80;
             // 
+            // extForPrice
+            // 
+            this.extForPrice.Text = "Price";
+            // 
+            // fifthprodcol
+            // 
+            this.fifthprodcol.Text = "Total Price:";
+            this.fifthprodcol.Width = 77;
+            // 
             // goToPurProdBtn
             // 
             this.goToPurProdBtn.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -354,21 +368,60 @@ namespace records_database
             this.goToPurProdBtn.UseVisualStyleBackColor = true;
             this.goToPurProdBtn.Click += new System.EventHandler(this.goToPurProdBtn_Click);
             // 
-            // fifthprodcol
+            // grndTotal
             // 
-            this.fifthprodcol.Text = "Total Price:";
-            this.fifthprodcol.Width = 77;
+            this.grndTotal.AutoSize = true;
+            this.grndTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grndTotal.Location = new System.Drawing.Point(494, 484);
+            this.grndTotal.Name = "grndTotal";
+            this.grndTotal.Size = new System.Drawing.Size(13, 13);
+            this.grndTotal.TabIndex = 26;
+            this.grndTotal.Text = "0";
             // 
-            // extForPrice
+            // reloadlist
             // 
-            this.extForPrice.Text = "Price";
+            this.reloadlist.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.reloadlist.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.reloadlist.Location = new System.Drawing.Point(15, 485);
+            this.reloadlist.Name = "reloadlist";
+            this.reloadlist.Size = new System.Drawing.Size(216, 39);
+            this.reloadlist.TabIndex = 27;
+            this.reloadlist.Text = "Refresh Your Products";
+            this.reloadlist.UseVisualStyleBackColor = true;
+            this.reloadlist.Click += new System.EventHandler(this.reloadlist_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(449, 484);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "TOTAL:";
+            // 
+            // posbtn
+            // 
+            this.posbtn.Font = new System.Drawing.Font("JetBrains Mono Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.posbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.posbtn.Location = new System.Drawing.Point(237, 485);
+            this.posbtn.Name = "posbtn";
+            this.posbtn.Size = new System.Drawing.Size(138, 39);
+            this.posbtn.TabIndex = 29;
+            this.posbtn.Text = "GO TO POS";
+            this.posbtn.UseVisualStyleBackColor = true;
+            this.posbtn.Click += new System.EventHandler(this.posbtn_Click);
             // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::records_database.Properties.Resources._318304089_551224579767443_5089812890261992367_n;
+            this.BackgroundImage = global::records_database.Properties.Resources.Green;
             this.ClientSize = new System.Drawing.Size(1121, 549);
+            this.Controls.Add(this.posbtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.reloadlist);
+            this.Controls.Add(this.grndTotal);
             this.Controls.Add(this.goToPurProdBtn);
             this.Controls.Add(this.lvprod);
             this.Controls.Add(this.catmaintenancelbl);
@@ -434,6 +487,11 @@ namespace records_database
         private System.Windows.Forms.Button goToPurProdBtn;
         private System.Windows.Forms.ColumnHeader fifthprodcol;
         private System.Windows.Forms.ColumnHeader extForPrice;
+        private System.Windows.Forms.Label grndTotal;
+        private System.Windows.Forms.Button reloadlist;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button posbtn;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
